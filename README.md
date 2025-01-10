@@ -15,7 +15,7 @@ Cette application utilise un modèle d'IA pour détecter les fractures sur des r
 
 ## Déploiement
 Cette application est déployée avec Streamlit Cloud :
-- [Lien vers l'application]([https://humerus-cfcjgkvwgfupka2ruris3a.streamlit.app/])
+- [https://humerus-cfcjgkvwgfupka2ruris3a.streamlit.app/]
 
 ## Dépendances
 Les bibliothèques nécessaires sont listées dans le fichier `requirements.txt`.
