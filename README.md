@@ -21,4 +21,4 @@ Cette application est déployée avec Streamlit Cloud :
 Les bibliothèques nécessaires sont listées dans le fichier `requirements.txt`.
 
 ## Auteurs
-Projet créé par nancy NOUBOU.
+Projet créé par nancy et soultana
