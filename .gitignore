@@ -1,0 +1,31 @@
+# Environnements virtuels
+.venv/
+env/
+venv/
+
+# Fichiers spécifiques aux IDE
+.idea/
+.vscode/
+
+# Logs et fichiers temporaires
+*.log
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+*.sqlite3
+
+# Configurations locales
+*.env
+.DS_Store
+Thumbs.db
+
+# Dépendances
+node_modules/
+*.h5
+
+# Fichiers Streamlit générés
+.streamlit/config.toml
+
+# Autres fichiers sensibles
+secret_key.txt
