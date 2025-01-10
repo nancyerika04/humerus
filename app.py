@@ -11,9 +11,16 @@ model = load_my_model()
 
 # Fonction de prédiction
 def predict(image, model):
-    image = ImageOps.fit(image, (224, 224), Image.ANTIALIAS)  # Ajuster la taille
-    image_array = np.asarray(image) / 255.0  # Normaliser les pixels
+    image = ImageOps.fit(image, (224, 224))  # Ajuster la taille
+    image_array = np.array(image).astype('float32') / 255.0  # Normaliser l'image
+
+    # Si l'image n'a pas de canal de couleur, ajoutez-en un
+    if len(image_array.shape) == 2:  # Image en niveaux de gris
+        image_array = np.expand_dims(image_array, axis=-1)  # Ajouter un canal
+        image_array = np.repeat(image_array, 3, axis=-1)  # Répéter le canal pour en avoir 3 (RGB)
+
     image_array = np.expand_dims(image_array, axis=0)  # Ajouter une dimension batch
+
     prediction = model.predict(image_array)
     return prediction[0][0]  # Retourne la probabilité
 
@@ -33,3 +40,5 @@ if uploaded_file is not None:
         st.write(f"### Résultat : Fracture détectée (Probabilité : {prediction:.2f})")
     else:
         st.write(f"### Résultat : Aucune fracture détectée (Probabilité : {prediction:.2f})")
+
+
